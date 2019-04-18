@@ -1,0 +1,56 @@
+@mixin clearfix {
+  &::after {
+    clear: both;
+    content: "";
+    display: table;
+  }
+}
+
+/* ==================================
+=   HIGH PPI DISPLAY BACKGROUNDS    =
+================================== */
+@mixin background-2x($path, $ext: "png", $w: auto, $h: auto, $pos: left top, $repeat: no-repeat, $size: "cover") {
+  $at1x_path: "#{$path}.#{$ext}";
+  $at2x_path: "#{$path}@2x.#{$ext}";
+
+  @if $size == 'cover' {
+    background-size: #{$size};
+  }
+
+  @else {
+    background-size: #{$w $h};
+  }
+
+  background: url("#{$at1x_path}") $repeat $pos;
+
+  @media all and (-o-min-device-pixel-ratio: 3/2),
+    all and (-webkit-min-device-pixel-ratio: 1.5) {
+    background-image: url("#{$at2x_path}");
+  }
+}
+
+@mixin parallax-background {
+  @extend .parallax;
+
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+@mixin keyframes ($animation) {
+  @-webkit-keyframes #{$animation} {
+    @content;
+  }
+
+  @-moz-keyframes #{$animation} {
+    @content;
+  }
+
+  @-o-keyframes #{$animation} {
+    @content;
+  }
+
+  @keyframes #{$animation} {
+    @content;
+  }
+}

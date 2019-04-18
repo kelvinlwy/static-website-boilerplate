@@ -8,7 +8,6 @@ const rules = require('./webpack.rules');
 module.exports = {
   entry: [
     path.join(__dirname, 'src/index.js'),
-    path.join(__dirname, 'src/styles/styles.scss'),
   ],
   output: {
     path: path.join(__dirname, 'dist'),

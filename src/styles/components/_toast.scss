@@ -1,0 +1,94 @@
+.toast {
+  $width: 300px;
+  $toast-margin: 32px;
+  $toast-margin-y: $toast-margin;
+  $toast-margin-x: $width / 2;
+
+  position: fixed;
+  min-width: $width;
+  padding: 16px;
+  margin-left: -$width/2;
+  bottom: $toast-margin-y;
+  left: 50%;
+  right: 50%;
+  background-color: $secondary-color;
+  color: white;
+  text-align: center;
+  border-radius: $base-border-radius;
+  font-size: $font-size-md;
+  word-wrap: break-word;
+  z-index: 999;
+  visibility: hidden;
+
+  &--show {
+    $show: &;
+    visibility: visible;
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+
+    &-bottom {
+      @extend #{$show};
+
+      bottom: $toast-margin-y;
+    }
+
+    &-top {
+      @extend #{$show};
+
+      bottom: unset;
+      top: $toast-margin-y;
+    }
+
+    &-topleft {
+      @extend #{$show};
+
+      bottom: unset;
+      top: $toast-margin-y;
+      left: $toast-margin-x + $toast-margin;
+      right: unset;
+    }
+
+    &-topright {
+      @extend #{$show};
+
+      bottom: unset;
+      top: $toast-margin-y;
+      right: $toast-margin;
+      left: unset;
+    }
+
+    &-bottomleft {
+      @extend #{$show};
+
+      left: $toast-margin-x + $toast-margin;
+      right: unset;
+    }
+
+    &-bottomright {
+      @extend #{$show};
+
+      left: unset;
+      right: $toast-margin;
+    }
+  }
+}
+
+@include keyframes (fadein) {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@include keyframes (fadeout) {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}

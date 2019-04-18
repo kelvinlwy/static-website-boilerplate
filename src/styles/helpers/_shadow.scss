@@ -1,0 +1,7 @@
+@import "palette";
+
+/* ==================================
+=            Box Shadow             =
+================================== */
+$default-box-shadow:            0 0 10px rgba($brand-support-color, 0.2);
+$box-shadow-depth-1:            0 0 10px rgba($brand-support-color, 0.2), 0 0 15px 2px rgba($brand-support-color, 0.15);

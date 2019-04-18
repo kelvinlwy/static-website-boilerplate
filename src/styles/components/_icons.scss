@@ -1,0 +1,95 @@
+.i-heart {
+  $color: #dc143c;
+
+  height: $icon-size/2;
+  margin: $icon-margin;
+  width: $icon-size/2;
+  background-color: $color;
+  transform: rotate(45deg);
+
+  &::before,
+  &::after {
+    height: $icon-size/2;
+    width: $icon-size/2;
+    position: absolute;
+    background-color: $color;
+    border-radius: $round-border-radius;
+    content: "";
+  }
+
+  &::before {
+    top: -$icon-size / 4;
+    left: 0;
+  }
+
+  &::after {
+    top: 0;
+    left: -$icon-size/4;
+  }
+}
+
+.i-tick {
+  $color: $brand-success-color;
+
+  margin: $icon-margin;
+  height: $icon-size;
+  width: $icon-size/2;
+  border-bottom: 4px solid $color;
+  border-right: 4px solid $color;
+  transform: rotate(45deg);
+}
+
+.i-done {
+  $color: $brand-success-color;
+
+  @extend .i-tick;
+
+  cursor: pointer;
+
+  &:hover {
+    border-bottom: 4px solid darken($color, 20%);
+    border-right: 4px solid darken($color, 20%);
+  }
+}
+
+.i-cross {
+  $color: $brand-error-color;
+
+  position: relative;
+  margin: $icon-margin / 2;
+  width: $icon-size;
+  height: $icon-size;
+
+  &::before,
+  &::after {
+    position: absolute;
+    height: $icon-size;
+    width: 2px;
+    left: $icon-size/2;
+    background-color: $color;
+    content: ' ';
+  }
+
+  &::before {
+    transform: rotate(45deg);
+  }
+
+  &::after {
+    transform: rotate(-45deg);
+  }
+}
+
+.i-close {
+  $color: $brand-error-color;
+
+  @extend .i-cross;
+
+  cursor: pointer;
+
+  &:hover {
+    &::before,
+    &::after {
+      background-color: darken($color, 20%);
+    }
+  }
+}

@@ -1,0 +1,70 @@
+/* ===================================
+=            Brand Color             =
+=================================== */
+$primary-color: 						#0e2f44 !default;
+$primary-color-dark: 				#00051d !default;
+$primary-color-light:       #3c586f !default;
+
+@if not $primary-color-light {
+  $primary-color-light: lighten($primary-color, 15%);
+}
+
+@if not $primary-color-dark {
+  $primary-color-dark: darken($primary-color, 15%);
+}
+$secondary-color: 					#5d8299 !default;
+$secondary-color-dark: 			#2f566b !default;
+$secondary-color-light: 		#8cb1ca !default;
+
+@if not $secondary-color-light {
+  $primary-color-light: lighten($secondary-color, 15%);
+}
+
+@if not $secondary-color-dark {
+  $primary-color-dark: darken($secondary-color, 15%);
+}
+
+$accent-color:                    #ff4f50 !default;
+
+$brand-success-color:             #85ffa7 !default;
+$brand-error-color:               #cc1617 !default;
+
+$brand-support-color:             #330b0b !default;
+
+// Text Color
+$text-color: 						          $brand-support-color;
+$text-color-dark:                 darken($text-color, 20%);
+$text-color-light:                lighten($text-color, 20%);
+$brand-primary-text-contrast:     #fff;
+$brand-secondary-text-contrast:   #fff;
+
+// Grey Support Color
+$grey-color-darkest: 				      #333;
+$grey-color-darker: 				      #555;
+$grey-color-dark: 					      #777;
+$grey-color: 					            #999;
+$grey-color-light: 					      #b9b9b9;
+$grey-color-lighter: 				      #eee;
+$grey-color-lightest: 			      #f4f4f4;
+
+// Offical Brand Color
+$brand-colors: (
+  'github'                        #333,
+  'instagram'                     #405de6,
+  'linkedin'                      #0077b5,
+  'skype'                         #00aff0,
+  'android'                       #a4c639,
+  'apple'                         #000,
+  'js'                            #f7df1e,
+);
+
+@each $name, $color in $brand-colors {
+  .#{($name)} {
+    color: $color;
+    &:hover { color: darken($color, 10%); }
+  }
+}
+
+// Custom color variables
+$border-color: 						        $grey-color-light !default;
+$background-color:                $grey-color-lightest !default;

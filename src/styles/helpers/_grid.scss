@@ -1,0 +1,25 @@
+// Using bourbon neat to support grid layout
+// For more information, check out https://neat.bourbon.io
+
+/* ============================
+=          Grid Layout        =
+============================ */
+// Number of the total grid columns defaults to 12
+// Grid gutter width between columns defaults to 20px
+
+.container {
+  @include grid-container;
+}
+
+@for $i from 1 through 12 {
+  .col-#{$i} {
+    @include grid-column($i);
+  }
+
+  .col-#{$i}-center {
+    @include grid-column($i);
+    @include grid-push((12 - $i) / 2);
+
+    text-align: center;
+  }
+}
