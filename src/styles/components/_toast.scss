@@ -22,9 +22,10 @@
 
   &--show {
     $show: &;
+
     visibility: visible;
-    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
-    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    -webkit-animation: toast-fadein 0.5s, toast-fadeout 0.5s 2.5s;
+    animation: toast-fadein 0.5s, toast-fadeout 0.5s 2.5s;
 
     &-bottom {
       @extend #{$show};
@@ -73,7 +74,7 @@
   }
 }
 
-@include keyframes (fadein) {
+@include keyframes (toast-fadein) {
   from {
     opacity: 0;
   }
@@ -83,7 +84,7 @@
   }
 }
 
-@include keyframes (fadeout) {
+@include keyframes (toast-fadeout) {
   from {
     opacity: 1;
   }

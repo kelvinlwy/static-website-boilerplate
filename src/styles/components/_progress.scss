@@ -1,0 +1,44 @@
+progress {
+  @mixin progress-bg {
+    background-color: $background-color;
+    border-radius: $base-border-radius;
+  }
+
+  @mixin progress-bar {
+    background-image: -webkit-linear-gradient(-45deg, $progress-color 33%, darken($progress-color, 3%) 33%, darken($progress-color, 3%) 66%, $progress-color 66%);
+    background-size: 35px 20px;
+    border-radius: $base-border-radius;
+  }
+
+  -webkit-appearance: none;
+
+  &[value]::-webkit-progress-bar {
+    @include progress-bg;
+
+    box-shadow: inset $default-box-shadow;
+  }
+
+  &[value]::-webkit-progress-value {
+    @include progress-bar;
+  }
+
+  &:not([value])::-webkit-progress-bar {
+    @include progress-bar;
+  }
+
+  // Style indeterminate progress bar
+  &.indeterminate {
+    &[value]::-webkit-progress-value,
+    &:not([value])::-webkit-progress-bar {
+      @include progress-bar;
+
+      animation: animate-stripes 5s linear infinite;
+    }
+  }
+}
+
+@include keyframes (animate-stripes) {
+  100% {
+    background-position: -100px 0;
+  }
+}

@@ -1,3 +1,5 @@
+@import "../helpers/palette";
+
 /* ==================================
 =                 Page              =
 ================================== */
@@ -44,29 +46,35 @@ main {
   min-height: 100%;
 }
 
+input,
+textarea,
+select {
+  outline: none;
+  -webkit-appearance: none;
+}
+
 /* ==================================
 =                 Font              =
 ================================== */
 
-$font-sizes: (
-  'h1'          4rem        $heading-font-weight,
-  'h2'          3rem        $heading-font-weight,
-  'h3'          2.5rem      $heading-font-weight,
-  'h4'          2rem        $heading-font-weight,
-  'h5'          1.5rem      $heading-font-weight,
-  'h6'          1.25rem     $heading-font-weight,
-  'p'           1rem        $base-font-weight,
-  'span'        0.875rem    $base-font-weight,
-  'label'       1rem        $base-font-weight,
-  'a'           1rem        $base-font-weight,
-  'input'       1rem        $base-font-weight,
-  'testarea'    1rem        $base-font-weight,
-  'blockquote'  1.5rem      $base-font-weight,
-  'button'      1rem        $base-font-weight
-  'select'      1rem        $base-font-weight
+$fonts: (
+  'h1' 4rem $heading-font-weight,
+  'h2' 3rem $heading-font-weight,
+  'h3' 2.5rem $heading-font-weight,
+  'h4' 2rem $heading-font-weight,
+  'h5' 1.5rem $heading-font-weight,
+  'h6' 1.25rem $heading-font-weight,
+  'p' 1rem $base-font-weight,
+  'span' 0.875rem $base-font-weight,
+  'label' 1rem $base-font-weight,
+  'a' 1rem $base-font-weight,
+  'input' 1rem $base-font-weight,
+  'textarea' 1rem $base-font-weight,
+  'blockquote' 1.5rem $base-font-weight,
+  'button' 1rem $base-font-weight 'select' 1rem $base-font-weight
 );
 
-@each $name, $size, $weight in $font-sizes {
+@each $name, $size, $weight in $fonts {
   #{$name} {
     margin: 0;
     font-family: $base-font-family;
@@ -75,6 +83,11 @@ $font-sizes: (
     color: $text-color;
     line-height: 1.5;
   }
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: $placeholder-color;
 }
 
 /* ==================================
