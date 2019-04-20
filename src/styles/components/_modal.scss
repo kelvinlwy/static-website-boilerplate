@@ -1,0 +1,91 @@
+.modal {
+  $modal: &;
+
+  @include grid-container;
+
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  align-items: center;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(black, 0.5);
+  opacity: 0;
+  transition: opacity 0.3s;
+
+  &-show {
+    opacity: 1;
+  }
+
+  &__wrapper {
+    @extend .col-4-center;
+
+    max-height: 80%;
+    border-radius: $base-border-radius;
+    background-color: $background-color;
+    overflow: hidden;
+  }
+
+  &__header {
+    display: flex;
+    height: 48px;
+    padding: 8px 16px;
+    align-items: center;
+    border-bottom: 1px solid $primary-color;
+
+    &--title {
+      margin: auto;
+      font-weight: $heading-font-weight;
+
+      &-left {
+        margin-right: auto;
+      }
+
+      &-right {
+        margin-left: auto;
+      }
+
+      &-center {
+        margin: auto;
+      }
+    }
+  }
+
+  &__footer {
+    @extend .modal__header;
+
+    height: 56px;
+
+    &--btns {
+      display: inline-flex;
+      flex-direction: row;
+      align-items: center;
+      margin: auto;
+
+      &-left {
+        margin-right: auto;
+      }
+
+      &-right {
+        margin-left: auto;
+      }
+
+      &-center {
+        margin: auto;
+      }
+    }
+  }
+
+  &__content {
+    display: block;
+    min-height: 96px;
+    max-height: 240px;
+    padding: 16px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    word-break: break-all;
+  }
+}

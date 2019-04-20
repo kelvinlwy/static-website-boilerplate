@@ -85,9 +85,11 @@ $fonts: (
   }
 }
 
-input::placeholder,
-textarea::placeholder {
-  color: $placeholder-color;
+input,
+textarea {
+  @include placeholder {
+    color: $placeholder-color;
+  }
 }
 
 /* ==================================

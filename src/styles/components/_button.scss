@@ -1,0 +1,47 @@
+button,
+input[type=button],
+input[type=submit] {
+  display: block;
+  min-width: 80px;
+  padding: 4px 16px;
+  color: white;
+  border: 0;
+  border-radius: $base-border-radius;
+  font-size: $font-size-md;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+.btn {
+  @extend button;
+
+  $buttons: (
+    'neutral' $secondary-color-light,
+    'positive' $secondary-color-dark,
+    'negative' $grey-color-light,
+    'disabled' $grey-color-lighter,
+  );
+
+  &-sm {
+    font-size: $font-size-sm;
+    padding: 2px 8px;
+  }
+
+  &-lg {
+    font-size: $font-size-lg;
+    padding: 4px 24px;
+  }
+
+  @each $name, $color in $buttons {
+    &-#{$name} {
+      background-color: $color;
+      transition: $default-transition;
+
+      @if $name != "disabled" {
+        &:hover {
+          background-color: darken($color, 20%);
+        }
+      }
+    }
+  }
+}

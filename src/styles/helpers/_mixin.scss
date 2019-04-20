@@ -37,7 +37,7 @@
   background-position: center;
 }
 
-@mixin keyframes ($animation) {
+@mixin keyframes($animation) {
   @-webkit-keyframes #{$animation} {
     @content;
   }
@@ -51,6 +51,28 @@
   }
 
   @keyframes #{$animation} {
+    @content;
+  }
+}
+
+@mixin placeholder {
+  &::placeholder {
+    @content;
+  }
+
+  &::-webkit-input-placeholder {
+    @content;
+  }
+
+  &:-moz-placeholder {
+    @content;
+  }
+
+  &::-moz-placeholder {
+    @content;
+  }
+
+  &:-ms-input-placeholder {
     @content;
   }
 }
