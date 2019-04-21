@@ -48,9 +48,9 @@ select {
   font-weight: 600;
   padding: 8px 16px 8px 8px;
   box-sizing: border-box;
-  border: 0;
+  border: 1px solid $grey-color-lightest;
   border-radius: $base-border-radius;
-  background-color: $background-color;
+  background-color: white;
   outline: none;
   -moz-appearance: none;
   -webkit-appearance: none;
