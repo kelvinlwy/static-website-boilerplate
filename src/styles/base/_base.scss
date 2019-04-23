@@ -58,26 +58,27 @@ select {
 ================================== */
 
 $fonts: (
-  'h1' 4rem $heading-font-weight,
-  'h2' 3rem $heading-font-weight,
-  'h3' 2.5rem $heading-font-weight,
-  'h4' 2rem $heading-font-weight,
-  'h5' 1.5rem $heading-font-weight,
-  'h6' 1.25rem $heading-font-weight,
-  'p' 1rem $base-font-weight,
-  'span' 0.875rem $base-font-weight,
-  'label' 1rem $base-font-weight,
-  'a' 1rem $base-font-weight,
-  'input' 1rem $base-font-weight,
-  'textarea' 1rem $base-font-weight,
-  'blockquote' 1.5rem $base-font-weight,
-  'button' 1rem $base-font-weight 'select' 1rem $base-font-weight
+  'h1' 4rem $heading-font-weight $base-font-family,
+  'h2' 3rem $heading-font-weight $base-font-family,
+  'h3' 2.5rem $heading-font-weight $base-font-family,
+  'h4' 2rem $heading-font-weight $base-font-family,
+  'h5' 1.5rem $heading-font-weight $base-font-family,
+  'h6' 1.25rem $heading-font-weight $base-font-family,
+  'p' 1rem $base-font-weight $base-font-family,
+  'span' 0.875rem $base-font-weight $base-font-family,
+  'label' 1rem $base-font-weight $base-font-family,
+  'a' 1rem $base-font-weight $base-font-family,
+  'input' 1rem $base-font-weight $base-font-family,
+  'textarea' 1rem $base-font-weight $base-font-family,
+  'blockquote' 1.5rem $base-font-weight $base-font-family,
+  'button' 1rem $base-font-weight 'select' 1rem $base-font-weight $base-font-family,
+  'pre' 0.875rem $base-font-weight $support-font-family
 );
 
-@each $name, $size, $weight in $fonts {
+@each $name, $size, $weight, $font in $fonts {
   #{$name} {
     margin: 0;
-    font-family: $base-font-family;
+    font-family: #{$font};
     font-weight: #{$weight};
     font-size: $size;
     color: $text-color;
