@@ -93,6 +93,16 @@ textarea {
   }
 }
 
+fieldset {
+  border: 1px solid $border-color;
+}
+
+legend {
+  padding: 4px 8px;
+  background: $secondary-color;
+  color: $brand-secondary-text-contrast;
+}
+
 /* ==================================
 =                 Link              =
 ================================== */
