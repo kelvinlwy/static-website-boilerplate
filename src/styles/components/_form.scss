@@ -29,10 +29,14 @@ textarea {
     border-bottom: 1px solid $grey-color;
   }
 
+  &.error {
+    border-bottom: 1px solid $brand-error-color;
+  }
+
   &.outlined {
     padding: 8px;
     background-color: $grey-color-lighter;
-    border: none;
+    border: 1px solid transparent;
 
     &:hover {
       background-color: darken($grey-color-lighter, 1%);
@@ -41,12 +45,20 @@ textarea {
     &:focus {
       box-shadow: inset $default-box-shadow;
     }
+
+    &.error {
+      border: 1px solid $brand-error-color;
+    }
   }
+}
+
+textarea {
+  min-height: 64px;
 }
 
 select {
   font-weight: 600;
-  padding: 8px 16px 8px 8px;
+  padding: 4px 16px 4px 8px;
   box-sizing: border-box;
   border: 1px solid $grey-color-lightest;
   border-radius: $base-border-radius;
