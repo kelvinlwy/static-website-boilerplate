@@ -1,0 +1,51 @@
+table {
+  width: 100%;
+  border-spacing: 0;
+
+  td,
+  th {
+    text-align: left;
+    padding: 8px;
+  }
+
+  thead {
+    tr {
+      th {
+        font-weight: $heading-font-weight;
+        border-bottom: 2px solid $grey-color-lighter;
+      }
+    }
+  }
+
+  tbody {
+    tr {
+      td,
+      th {
+        padding: 8px;
+        border-top: 1px solid $grey-color-lighter;
+      }
+
+      &:first-child {
+        td,
+        th {
+          border-top: 0;
+        }
+      }
+    }
+  }
+
+  &.striped {
+    tbody {
+      tr:nth-child(even) {
+        background-color: $grey-color-lighter;
+      }
+
+      tr {
+        td,
+        th {
+          border-top: 0;
+        }
+      }
+    }
+  }
+}
