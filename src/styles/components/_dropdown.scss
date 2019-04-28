@@ -1,0 +1,76 @@
+$dropdown-position: (
+  'left',
+  'right'
+);
+
+.dropdown {
+  display: inline-block;
+  position: relative;
+
+  > a {
+    background-color: $secondary-color-light;
+    color: $brand-secondary-text-contrast;
+    padding: 4px 8px;
+
+    &.current {
+      background-color: $secondary-color;
+    }
+  }
+
+  ul {
+    @extend .list-styleless;
+
+    display: none;
+    position: absolute;
+    min-width: 160px;
+    left: 0;
+    background-color: $background-color;
+    box-shadow: 0 5px 10px 0 rgba($brand-support-color, 0.2);
+    z-index: 1;
+
+    li {
+      display: block;
+      color: $text-color;
+      padding: 4px 8px;
+      cursor: pointer;
+
+      a {
+        @extend p;
+      }
+
+      &:hover {
+        background-color: darken($background-color, 5%);
+      }
+
+      &.current {
+        background-color: darken($background-color, 10%);
+      }
+    }
+  }
+
+  &:hover {
+    ul {
+      display: block;
+    }
+
+    li {
+      background-color: $background-color;
+    }
+  }
+
+  @each $position in $dropdown-position {
+    &-#{$position} {
+      ul {
+        @each $val in $dropdown-position {
+          @if $position == $val {
+            #{$val}: 0;
+          }
+
+          @else {
+            #{$val}: unset;
+          }
+        }
+      }
+    }
+  }
+}
