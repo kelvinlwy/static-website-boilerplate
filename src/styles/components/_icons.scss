@@ -106,7 +106,9 @@
   cursor: pointer;
 
   /* The markup to create menu icon's bars */
-  &::after, &::before, span {
+  &::after,
+  &::before,
+  span {
     display: block;
     height: 3px;
     margin: 5px 0;
@@ -129,5 +131,37 @@
   /* The middle bar transform to scale 0 in hover state */
   &:hover span {
     transform: scale(0);
+  }
+}
+
+/* ==================================
+=            Arrow Icons            =
+================================== */
+.i-arrow {
+  position: relative;
+  height: $icon-size/2;
+  width: $icon-size/2;
+  margin: $icon-margin;
+  border-top: 4px solid #fff;
+  border-right: 4px solid #fff;
+  transform: rotate(45deg); // default arrow direction to right
+}
+
+$arrow-direction: (
+  "right" 45deg,
+  "downright" 90deg,
+  "down" 135deg,
+  "downleft" 180deg,
+  "left" 225deg,
+  "upleft" 270deg,
+  "up" 315deg,
+  "upright" 0deg
+);
+
+@each $direction, $deg in $arrow-direction {
+  .i-arrow-#{$direction} {
+    @extend .i-arrow;
+
+    transform: rotate($deg);
   }
 }
