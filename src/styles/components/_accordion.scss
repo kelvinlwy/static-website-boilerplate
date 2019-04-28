@@ -1,0 +1,74 @@
+/* Basic Accordion Styles */
+.accordion {
+  display: block;
+  position: relative;
+
+  &__item {
+    /* Radio Inputs */
+    input[type='radio'] {
+      display: none;
+
+      &:checked {
+        ~ .accordion__content {
+          max-height: 1000px;
+        }
+
+        ~ label {
+          background-color: $secondary-color;
+
+          /* Arrow up icon */
+          &::after {
+            top: 16px;
+            transform: rotate(225deg);
+          }
+        }
+      }
+    }
+
+    /* Label */
+    label {
+      display: block;
+      position: relative;
+      padding: 8px 16px;
+      background-color: $secondary-color-light;
+      color: $brand-secondary-text-contrast;
+      cursor: pointer;
+      transition: $default-transition;
+
+      /* Arrow down icon */
+      &::after {
+        content: "";
+        position: absolute;
+        height: 8px;
+        width: 8px;
+        top: 12px;
+        right: 16px;
+        border-bottom: 4px solid #fff;
+        border-right: 4px solid #fff;
+        transform: rotate(45deg);
+        transition: $default-transition;
+      }
+
+      &:hover {
+        background-color: darken($secondary-color-light, 5%);
+      }
+    }
+
+    &:not(:last-of-type) {
+      label {
+        border-bottom: 1px solid $brand-secondary-text-contrast;
+      }
+    }
+  }
+
+  /* Content */
+  &__content {
+    position: relative;
+    height: auto;
+    max-height: 0;
+    background: $background-color;
+    color: $text-color;
+    overflow: hidden;
+    transition: max-height 0.4s cubic-bezier(0.865, 0.14, 0.095, 0.87);
+  }
+}
