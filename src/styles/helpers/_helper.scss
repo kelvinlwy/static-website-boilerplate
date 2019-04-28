@@ -24,3 +24,9 @@
 .text-right {
   text-align: right;
 }
+
+.sticky {
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  top: 0;
+}

@@ -1,4 +1,6 @@
 progress {
+  height: 12px;
+
   @mixin progress-bg {
     background-color: $background-color;
     border-radius: $base-border-radius;
