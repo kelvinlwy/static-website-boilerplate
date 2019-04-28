@@ -14,6 +14,7 @@
   left: 0;
   background-color: rgba(black, 0.5);
   visibility: hidden;
+  z-index: 9999;
 
   &-show {
     visibility: visible;
