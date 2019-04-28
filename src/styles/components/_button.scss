@@ -10,6 +10,7 @@ input[type=submit] {
   font-size: $font-size-md;
   cursor: pointer;
   text-transform: uppercase;
+  transition: $default-transition;
 }
 
 .btn {
@@ -43,5 +44,9 @@ input[type=submit] {
         }
       }
     }
+  }
+
+  &-raised:hover {
+    box-shadow: 0 5px 10px 0 rgba($border-color, 0.5);
   }
 }
