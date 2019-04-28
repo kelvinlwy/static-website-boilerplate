@@ -93,3 +93,41 @@
     }
   }
 }
+
+/* ==================================
+=        Hamburger Menu Icon        =
+================================== */
+
+.i-menu {
+  display: inline-block;
+  vertical-align: middle;
+  width: $icon-size;
+  margin: $icon-margin / 2;
+  cursor: pointer;
+
+  /* The markup to create menu icon's bars */
+  &::after, &::before, span {
+    display: block;
+    height: 3px;
+    margin: 5px 0;
+    background-color: #fff;
+    border-radius: $base-border-radius;
+    content: '';
+    transition: $default-transition;
+  }
+
+  /* :before & :after are rotated to create 'X' or a cross with spin animation with 135 rotation degrees instead of 45 degrees */
+  &:hover::before {
+    transform: translateY(8px) rotate(135deg);
+  }
+
+  /* :before & :after are rotated to create 'X' or a cross with spin animation with 135 rotation degrees instead of 45 degrees */
+  &:hover::after {
+    transform: translateY(-8px) rotate(-135deg);
+  }
+
+  /* The middle bar transform to scale 0 in hover state */
+  &:hover span {
+    transform: scale(0);
+  }
+}
