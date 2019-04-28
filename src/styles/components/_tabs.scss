@@ -1,0 +1,100 @@
+/* ======================
+=          Tabs         =
+====================== */
+
+/* Pure CSS Tabs */
+.tabs {
+  display: block;
+  width: 100%;
+  overflow: hidden;
+  background-color: $secondary-color-light;
+
+  input[type='radio'] {
+    display: none;
+
+    $tab-seq: 1 2;
+
+    @each $i in $tab-seq {
+      &:checked[data-tab=tab#{$i}] {
+        + label {
+          background: $secondary-color;
+        }
+
+        ~ #tab#{$i}.tabcontent {
+          display: block;
+        }
+      }
+    }
+  }
+
+  /* Label */
+  label {
+    display: inline-block;
+    position: relative;
+    background-color: inherit;
+    padding: 8px 16px;
+    border: none;
+    color: $brand-secondary-text-contrast;
+    outline: none;
+    cursor: pointer;
+    transition: $default-transition;
+
+    /* Remove the space between inline-block elements */
+    &:not(:first-of-type) {
+      margin-left: -4px;
+    }
+
+    &:hover {
+      background: darken($secondary-color-light, 10%);
+    }
+  }
+}
+
+/* Style the tab content */
+.tabcontent {
+  display: none;
+  position: relative;
+  border: none;
+  border-top: 1px solid $brand-secondary-text-contrast;
+  background-color: $background-color;
+}
+
+/* Tabs style required JS support */
+//.tabs {
+//  display: block;
+//  width: 100%;
+//  overflow: hidden;
+//  border-bottom: 1px solid $border-color;
+//  background-color: $secondary-color-light;
+//
+//  /* Style the tab buttons that are used to open the tab content */
+//  a {
+//    display: inline-block;
+//    background-color: inherit;
+//    padding: 8px 16px;
+//    float: left;
+//    border: none;
+//    color: $brand-secondary-text-contrast;
+//    outline: none;
+//    cursor: pointer;
+//    transition: $default-transition;
+//
+//    &:hover {
+//      background: darken($secondary-color-light, 10%);
+//    }
+//
+//    &.active {
+//      background: $secondary-color;
+//    }
+//  }
+//}
+
+/* Style the tab content */
+//.tabcontent {
+//  display: none;
+//  border: none;
+//
+//  &.active {
+//    display: block;
+//  }
+//}
