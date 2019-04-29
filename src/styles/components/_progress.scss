@@ -1,3 +1,4 @@
+/* Linear progress loader */
 progress {
   height: 12px;
 
@@ -42,5 +43,33 @@ progress {
 @include keyframes (animate-stripes) {
   100% {
     background-position: -100px 0;
+  }
+}
+
+/* Circular progress loader */
+.loader {
+  $loader-size: 32px;
+
+  display: block;
+  width: $loader-size;
+  height: $loader-size;
+  border-radius: $circle-border-radius;
+  border: 5px solid $grey-color-lighter;
+  border-top: 5px solid $secondary-color;
+  animation: spin 1.5s ease-in-out infinite;
+
+  &-sm {
+    width: $loader-size / 2;
+    height: $loader-size / 2;
+  }
+
+  &-lg {
+    width: $loader-size * 1.5;
+    height: $loader-size * 1.5;
+  }
+
+  &-xl {
+    width: $loader-size * 2;
+    height: $loader-size * 2;
   }
 }
