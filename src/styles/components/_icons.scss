@@ -165,3 +165,48 @@ $arrow-direction: (
     transform: rotate($deg);
   }
 }
+
+/* Double arrows */
+.i-arrows {
+  position: relative;
+  height: $icon-size/2;
+  width: $icon-size/2;
+  margin: $icon-margin;
+
+  &::after,
+  &::before {
+    content: '';
+    position: absolute;
+    height: $icon-size/3;
+    width: $icon-size/3;
+    border-top: 4px solid #fff;
+    border-right: 4px solid #fff;
+    transform: rotate(45deg); // default arrow direction to right
+  }
+
+  &::after {
+    margin-left: -10px;
+  }
+}
+
+$arrow-direction: (
+  "right" 45deg,
+  "downright" 90deg,
+  "down" 135deg,
+  "downleft" 180deg,
+  "left" 225deg,
+  "upleft" 270deg,
+  "up" 315deg,
+  "upright" 0deg
+);
+
+@each $direction, $deg in $arrow-direction {
+  .i-arrows-#{$direction} {
+    @extend .i-arrows;
+
+    &::after,
+    &::before {
+      transform: rotate($deg);
+    }
+  }
+}
