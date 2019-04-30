@@ -48,7 +48,8 @@ $dropdown-position: (
     }
   }
 
-  &:hover {
+  &-hoverable:hover,
+  &.collapse {
     ul {
       display: block;
     }
