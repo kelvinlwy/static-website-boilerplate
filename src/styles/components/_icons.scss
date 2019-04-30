@@ -117,18 +117,25 @@
     content: '';
     transition: $default-transition;
   }
+}
+
+.i-hamburger {
+  @extend .i-menu;
 
   /* :before & :after are rotated to create 'X' or a cross with spin animation with 135 rotation degrees instead of 45 degrees */
+  &.active::before,
   &:hover::before {
     transform: translateY(8px) rotate(135deg);
   }
 
   /* :before & :after are rotated to create 'X' or a cross with spin animation with 135 rotation degrees instead of 45 degrees */
+  &.active::after,
   &:hover::after {
     transform: translateY(-8px) rotate(-135deg);
   }
 
   /* The middle bar transform to scale 0 in hover state */
+  &.active span,
   &:hover span {
     transform: scale(0);
   }
