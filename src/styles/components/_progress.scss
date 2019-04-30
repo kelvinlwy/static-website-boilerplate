@@ -35,7 +35,7 @@ progress {
     &:not([value])::-webkit-progress-bar {
       @include progress-bar;
 
-      animation: animate-stripes 5s linear infinite;
+      animation: animate-stripes 3s linear infinite;
     }
   }
 }

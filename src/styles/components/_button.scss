@@ -20,7 +20,7 @@ input[type=submit] {
     'neutral' $secondary-color-light,
     'positive' $secondary-color-dark,
     'negative' $grey-color-light,
-    'disabled' $grey-color-lighter,
+    'disabled' $disabled-color
   );
 
   &-sm {
