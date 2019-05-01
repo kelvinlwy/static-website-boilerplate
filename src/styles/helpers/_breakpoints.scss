@@ -9,14 +9,30 @@ $media-sm: (
   media: 768px
 );
 
+$media-sm-max: (
+  media: "screen and (max-width: 768px)"
+);
+
 $media-md: (
   media: 960px
+);
+
+$media-md-max: (
+  media: "screen and (max-width: 960px)"
 );
 
 $media-lg: (
   media: 1280px
 );
 
+$media-lg-max: (
+  media: "screen and (max-width: 1280px)"
+);
+
 $media-xl: (
   media: 1920px
+);
+
+$media-xl-max: (
+  media: "screen and (max-width: 1920px)"
 );
