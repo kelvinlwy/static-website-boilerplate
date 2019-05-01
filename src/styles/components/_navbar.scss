@@ -1,0 +1,108 @@
+/* Navbar */
+.navbar {
+  display: flex;
+  width: 100%;
+  height: 64px;
+  padding: 8px 16px;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background: $secondary-color;
+  z-index: 99;
+
+  &-sticky {
+    @extend .sticky;
+  }
+
+  /* Navigation menus wrapper */
+  .nav {
+    /* Navigation menu icon */
+    .i-menu {
+      display: none;
+    }
+
+    /* Navigation menus */
+    ul {
+      @extend .list-styleless;
+
+      /* Navigation menus item */
+      li {
+        display: inline-block;
+        position: relative;
+        margin: 0 16px;
+        cursor: pointer;
+
+        a {
+          color: $brand-secondary-text-contrast;
+        }
+
+        &:hover:not(.active) a {
+          color: $accent-color;
+        }
+
+        &.active {
+          border-bottom: 1px solid $brand-secondary-text-contrast;
+        }
+      }
+    }
+
+    /* Collapsible navigation is specifically for responsive design */
+    &--collapsible {
+      @include grid-media($media-sm-max) {
+        .i-menu {
+          display: block;
+        }
+
+        ul {
+          display: none;
+          position: absolute;
+          min-width: 160px;
+          right: 16px;
+          background-color: $background-color;
+          box-shadow: 0 5px 10px 0 rgba($brand-support-color, 0.2);
+          z-index: 99;
+
+          li {
+            display: block;
+            padding: 4px 8px;
+            margin: 0;
+            color: $text-color;
+            cursor: pointer;
+
+            a {
+              color: $text-color;
+            }
+
+            &:hover:not(.active) {
+              background-color: darken($background-color, 5%);
+
+              a {
+                color: $text-color !important;
+              }
+            }
+
+            &.active {
+              background-color: darken($secondary-color-light, 10%);
+              border-bottom: none;
+
+              a {
+                color: $brand-secondary-text-contrast;
+              }
+            }
+          }
+        }
+
+        &-collapse,
+        &:hover {
+          ul {
+            display: block;
+          }
+
+          li {
+            background-color: $background-color;
+          }
+        }
+      }
+    }
+  }
+}
