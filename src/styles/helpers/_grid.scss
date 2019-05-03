@@ -19,7 +19,5 @@
   .col-#{$i}-center {
     @include grid-column($i);
     @include grid-push((12 - $i) / 2);
-
-    text-align: center;
   }
 }

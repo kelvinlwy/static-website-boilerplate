@@ -47,7 +47,7 @@
     }
 
     /* Collapsible navigation is specifically for responsive design */
-    &--collapsible {
+    &--responsive {
       @include grid-media($media-sm-max) {
         .i-menu {
           display: block;
@@ -92,7 +92,7 @@
           }
         }
 
-        &-collapse,
+        &-open,
         &:hover {
           ul {
             display: block;

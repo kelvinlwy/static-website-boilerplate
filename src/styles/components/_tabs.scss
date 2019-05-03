@@ -12,15 +12,13 @@
   input[type='radio'] {
     display: none;
 
-    $tab-seq: 1 2;
-
-    @each $i in $tab-seq {
-      &:checked[data-tab=tab#{$i}] {
+    @for $i from 1 through 30 {
+      &:checked[data-tab=tabcontent#{$i}] {
         + label {
           background: $secondary-color;
         }
 
-        ~ #tab#{$i}.tabcontent {
+        ~ #tabcontent#{$i}.tabcontent {
           display: block;
         }
       }

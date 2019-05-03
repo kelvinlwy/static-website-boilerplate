@@ -30,3 +30,7 @@
   position: sticky;
   top: 0;
 }
+
+.clearfix {
+  @include clearfix;
+}
