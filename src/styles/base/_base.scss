@@ -91,6 +91,11 @@ $fonts: (
   }
 }
 
+strong,
+em {
+  font-weight: bold;
+}
+
 input,
 textarea {
   @include placeholder {

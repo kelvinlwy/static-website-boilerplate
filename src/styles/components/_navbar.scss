@@ -36,7 +36,7 @@
           color: $brand-secondary-text-contrast;
         }
 
-        &:hover:not(.active) a {
+        &:hover:not(.active) > a {
           color: $accent-color;
         }
 
