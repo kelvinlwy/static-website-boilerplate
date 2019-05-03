@@ -7,10 +7,15 @@ input[type=submit] {
   color: white;
   border: 0;
   border-radius: $base-border-radius;
+  background-color: $secondary-color;
   font-size: $font-size-md;
   cursor: pointer;
   text-transform: uppercase;
   transition: $default-transition;
+
+  &:hover {
+    background-color: darken($secondary-color, 20%);
+  }
 }
 
 .btn {
@@ -43,10 +48,19 @@ input[type=submit] {
           background-color: darken($color, 20%);
         }
       }
+
+      @else {
+        cursor: default;
+
+        &:hover {
+          background-color: $color;
+        }
+      }
     }
   }
 
   &-raised:hover {
-    box-shadow: 0 5px 10px 0 rgba($border-color, 0.5);
+    background-color: lighten($secondary-color, 5%);
+    box-shadow: 0 14px 26px -12px rgba($secondary-color, 0.42), 0 4px 23px 0 rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba($secondary-color, 0.2);
   }
 }
