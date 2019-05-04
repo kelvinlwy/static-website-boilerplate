@@ -25,28 +25,30 @@ textarea {
     background-color: transparent;
   }
 
-  &:hover {
+  &:hover:not(:disabled):not(.filled) {
     border-bottom: 1px solid $grey-color;
   }
 
-  &.error {
+  &.error,
+  &:invalid {
     border-bottom: 1px solid $brand-error-color;
   }
 
-  &.outlined {
+  &.filled {
     padding: 8px;
     background-color: $grey-color-lighter;
     border: 1px solid transparent;
 
-    &:hover {
+    &:hover:not(:disabled) {
       background-color: darken($grey-color-lighter, 1%);
     }
 
-    &:focus {
+    &:focus:not(:disabled) {
       box-shadow: inset $default-box-shadow;
     }
 
-    &.error {
+    &.error,
+    &:invalid {
       border: 1px solid $brand-error-color;
     }
   }
@@ -54,6 +56,20 @@ textarea {
 
 textarea {
   min-height: 64px;
+
+  &.resize {
+    &-none {
+      resize: none;
+    }
+
+    &-v {
+      resize: vertical;
+    }
+
+    &-h {
+      resize: horizontal;
+    }
+  }
 }
 
 select {
@@ -72,11 +88,11 @@ select {
   background-size: 8px auto, 0;
   cursor: pointer;
 
-  &:hover {
+  &:hover:not(:disabled) {
     background-color: $grey-color-lighter;
   }
 
-  &:focus {
+  &:focus:not(:disabled) {
     background-color: $grey-color-lighter;
     outline: none;
   }
