@@ -69,6 +69,8 @@ $fonts: (
   'h5' 1.5rem $heading-font-weight $base-font-family,
   'h6' 1.25rem $heading-font-weight $base-font-family,
   'p' 1rem $base-font-weight $base-font-family,
+  'strong' 1rem $heading-font-weight $base-font-family,
+  'em' 1rem $heading-font-weight $base-font-family,
   'li' 1rem $base-font-weight $base-font-family,
   'span' 0.875rem $base-font-weight $base-font-family,
   'label' 1rem $base-font-weight $base-font-family,
@@ -89,11 +91,6 @@ $fonts: (
     color: $text-color;
     line-height: 1.5;
   }
-}
-
-strong,
-em {
-  font-weight: bold;
 }
 
 input,
