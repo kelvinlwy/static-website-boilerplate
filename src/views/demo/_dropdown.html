@@ -1,0 +1,33 @@
+<section class="demo__section col-10-center">
+  <div id="dropdown" class="dropdown" onclick="toggleDropdown()">
+    <div class="i-menu"><span></span></div>
+    <ul>
+      <li><a href="#">Menu</a></li>
+      <li class="current">Active Menu</li>
+    </ul>
+  </div>
+  <h4>Dropdown Menu</h4>
+  <pre class="demo__usage">
+    <i class="demo__comment">To make the dropdown by hoverable, you can add the class <strong>dropdown-hoverable</strong> next to the class:dropdown.</i>
+    <i class="demo__comment">You can also use javascript to listen the dropdown click event and show the dropdown by adding the class <strong>collapse</strong></i>
+    &lt;div class=&quot;dropdown&quot;&gt;
+      &lt;div class=&quot;i-menu&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;/div&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Menu 1&lt;/a&gt;&lt;/li&gt;
+        <i class="demo__comment">Adding class <strong>current</strong> to menu item is to highlight the current/active menu item.</i>
+        &lt;li class=&quot;current&quot;&gt;Menu 2&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/div&gt;</pre>
+</section>
+
+<script>
+  function toggleDropdown() {
+    const dropdown = document.getElementById("dropdown");
+    const isCollapsed = dropdown.classList.contains("collapse");
+    if (isCollapsed) {
+      dropdown.classList.remove("collapse");
+    } else {
+      dropdown.classList.add("collapse");
+    }
+  }
+</script>

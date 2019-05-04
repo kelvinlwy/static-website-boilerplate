@@ -3,8 +3,6 @@
 @import "~normalize.css";   // Normailze CSS
 @import "neat";             // Neat SASS Grid
 
-// Themes
-
 // Helpers
 @import "helpers/palette";
 @import "helpers/typo";
@@ -21,6 +19,9 @@
 
 // Base
 @import "base/base";
+
+// Themes
+@import "themes/demo";
 
 // Pages
 

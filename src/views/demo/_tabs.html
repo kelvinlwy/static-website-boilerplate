@@ -1,0 +1,28 @@
+<section class="col-10-center demo__section">
+  <div class="tabs">
+    <input type="radio" name="tab" id="tab1" data-tab="tabcontent1"><label for="tab1">Tab 1</label>
+    <input type="radio" name="tab" id="tab2" data-tab="tabcontent2"><label for="tab2">Tab 2</label>
+    <div class="tabcontent" id="tabcontent1">
+      Lorem ipsum dolor sit amet,
+    </div>
+    <div class="tabcontent" id="tabcontent2">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+    </div>
+  </div>
+
+  <h4>Tabs</h4>
+  <pre class="demo__usage">
+    &lt;div class=&quot;tabs&quot;&gt;
+      <i class="demo__comment">The 'id' value must match the 'for' value in label, <strong>e.g. id="tab1", for="tab1"</strong>. Otherwise, the tab won't be triggered when clicked.</i>
+      &lt;input type=&quot;radio&quot; name=&quot;tab&quot; id=&quot;tab1&quot; data-tab=&quot;tabcontent1&quot;&gt;&lt;label for=&quot;tab1&quot;&gt;Tab 1&lt;/label&gt;
+      <i class="demo__comment">The 'data-tab' value must be started with tabcontent as prefix and ended with a number between 1 and 30, <strong>e.g. data-tab="tabcontent1", data-tab="tabcontent30"</strong></i>
+      &lt;input type=&quot;radio&quot; name=&quot;tab&quot; id=&quot;tab2&quot; data-tab=&quot;tabcontent2&quot;&gt;&lt;label for=&quot;tab2&quot;&gt;Tab 2&lt;/label&gt;
+      <i class="demo__comment">To show the tab content, the tab content id must match the corresponding data-tab value.</i>
+      &lt;div class=&quot;tabcontent&quot; id=&quot;tabcontent1&quot;&gt;
+        Lorem ipsum dolor sit amet,
+      &lt;/div&gt;
+      &lt;div class=&quot;tabcontent&quot; id=&quot;tabcontent2&quot;&gt;
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+      &lt;/div&gt;
+    &lt;/div&gt;</pre>
+</section>

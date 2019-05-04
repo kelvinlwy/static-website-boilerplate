@@ -1,0 +1,60 @@
+<section class="demo__section col-10-center">
+  <input type="button" value="Open Modal" onclick="openModal()"/>
+
+  <div id="modal" class="modal">
+    <div class="modal__wrapper">
+      <div class="modal__header">
+        <p class="modal__header--title modal__header--title-center">
+          Title
+        </p>
+      </div>
+      <div class="modal__content">
+        To open the modal, you can use javascript to add the class <strong>modal-show</strong> as sibling class next to class modal.
+      </div>
+      <div class="modal__footer">
+        <div class="modal__footer--btns modal__footer--btns-right">
+          <button class="btn-negative btn-sm" onclick="closeModal()">Close</button>
+          <button class="btn-positive btn-sm" onclick="closeModal()">OK</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <h4>Modal</h4>
+
+  <pre class="demo__usage">
+  <i class="demo__comment">To make the modal be visible, you need to add the class <strong>modal-show</strong> as sibling class next to class:modal.</i>
+  <i class="demo__comment">And you can close the modal by removing the class <strong>modal-show</strong>.</i>
+  &lt;div class=&quot;modal&quot;&gt;
+    &lt;div class=&quot;modal__wrapper&quot;&gt;
+      &lt;div class=&quot;modal__header&quot;&gt;
+        <i class="demo__comment">You can adjust the title position by using either the class <strong>modal__header--title-left</strong>, <strong>modal__header--title-center</strong>, or <strong>modal__header--title-right</strong></i>
+        &lt;p class=&quot;modal__header--title modal__header--title-center&quot;&gt;
+          Title
+        &lt;/p&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;modal__content&gt;
+        To open the modal, you can use javascript to add the class modal-show as sibling class next to class modal.
+      &lt;/div&gt;
+      &lt;div class=&quot;modal__footer&quot;&gt;
+        <i class="demo__comment">You can adjust the buttons position by using either the class <strong>modal__footer--btns-left</strong>, <strong>modal__footer--btns-center</strong>, or <strong>modal__footer--btns-right</strong></i>
+        &lt;div class=&quot;modal__footer--btns modal__footer--btns-right&quot;&gt;
+          &lt;button class=&quot;btn-negative btn-sm&quot; onclick=&quot;closeModal()&quot;&gt;Close&lt;/button&gt;
+          &lt;button class=&quot;btn-positive btn-sm&quot; onclick=&quot;closeModal()&quot;&gt;OK&lt;/button&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;</pre>
+</section>
+
+<script>
+  function openModal() {
+    const modal = document.getElementById("modal");
+    modal.classList.add("modal-show");
+  }
+
+  function closeModal() {
+    const modal = document.getElementById("modal");
+    modal.classList.remove("modal-show");
+  }
+</script>

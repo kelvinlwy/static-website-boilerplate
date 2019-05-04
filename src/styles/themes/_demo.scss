@@ -1,0 +1,41 @@
+.demo {
+  height: 100vh;
+
+  &__section {
+    padding: 16px 0;
+
+    &:not(:last-of-type) {
+      border-bottom: 1px solid $border-color;
+    }
+  }
+
+  &__usage {
+    margin: 8px 0;
+    padding: 0 16px;
+    border-left: 1px solid $accent-color;
+  }
+
+  &__comment {
+    color: $secondary-color-light;
+
+    strong {
+      font-size: $font-size-sm;
+      color: $secondary-color;
+    }
+  }
+
+  &--padding {
+    &-v {
+      padding: 16px 0;
+    }
+  }
+
+  &__icons div {
+    display: inline-block;
+  }
+
+  &__grid > div {
+    padding: 16px;
+    border: 1px dashed darken($grey-color-lighter, 1%);
+  }
+}

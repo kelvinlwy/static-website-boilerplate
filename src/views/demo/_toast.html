@@ -1,0 +1,42 @@
+<section class="demo__section col-10-center">
+  <div id="toast" class="toast">Simple feedback popup</div>
+  <div class="col-4 demo--padding-v">
+    <button onclick="showToast('bottom')" class="btn-sm">Toast (bottom)</button>
+  </div>
+  <div class="col-4 demo--padding-v">
+    <button onclick="showToast('bottomleft')" class="btn-sm">Toast (bottom left)</button>
+  </div>
+  <div class="col-4 demo--padding-v">
+    <button onclick="showToast('bottomright')" class="btn-sm">Toast (bottom right)</button>
+  </div>
+  <div class="col-4 demo--padding-v">
+    <button onclick="showToast('top')" class="btn-sm">Toast (top)</button>
+  </div>
+  <div class="col-4 demo--padding-v">
+    <button onclick="showToast('topleft')" class="btn-sm">Toast (top left)</button>
+  </div>
+  <div class="col-4 demo--padding-v">
+    <button onclick="showToast('topright')" class="btn-sm">Toast (top right)</button>
+  </div>
+  <h4>Toast</h4>
+  <pre class="demo__usage">
+    <i class="demo__comment">You can show the toast on specific position with one of following classes.</i>
+    <i class="demo__comment">Default position to Bottom: <strong>toast--show</strong></i>
+    <i class="demo__comment">Bottom: <strong>toast--show-bottom</strong></i>
+    <i class="demo__comment">Bottom Left: <strong>toast--show-bottomleft</strong></i>
+    <i class="demo__comment">Bottom Right: <strong>toast--show-bottomright</strong></i>
+    <i class="demo__comment">Top: <strong>toast--show-top</strong></i>
+    <i class="demo__comment">Top Left: <strong>toast--show-topleft</strong></i>
+    <i class="demo__comment">Top Right: <strong>toast--show-topright</strong></i>
+    &lt;div class=&quot;toast toast--show-bottom&quot;&gt;Simple feedback popup&lt;/div&gt;</pre>
+</section>
+
+<script>
+  function showToast(direction) {
+    const toast = document.getElementById("toast");
+    toast.classList.add(`toast--show-${direction}`);
+    setTimeout(() => {
+      toast.classList.remove(`toast--show-${direction}`);
+    }, 1000);
+  }
+</script>
