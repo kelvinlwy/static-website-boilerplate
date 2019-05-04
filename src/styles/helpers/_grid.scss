@@ -6,6 +6,10 @@
 ============================ */
 // Number of the total grid columns defaults to 12
 // Grid gutter width between columns defaults to 20px
+$grid: (
+  columns: 12,
+  gutter: 0
+);
 
 .container {
   @include grid-container;
@@ -13,11 +17,11 @@
 
 @for $i from 1 through 12 {
   .col-#{$i} {
-    @include grid-column($i);
+    @include grid-column($i, $grid);
   }
 
   .col-#{$i}-center {
-    @include grid-column($i);
+    @include grid-column($i, $grid);
     @include grid-push((12 - $i) / 2);
   }
 }
