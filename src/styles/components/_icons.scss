@@ -99,7 +99,6 @@
 ================================== */
 
 .i-menu {
-  display: inline-block;
   vertical-align: middle;
   width: $icon-size;
   margin: $icon-margin / 2;
@@ -198,22 +197,32 @@ $arrow-direction: (
 
 $arrow-direction: (
   "right" 45deg,
-  "downright" 90deg,
-  "down" 135deg,
-  "downleft" 180deg,
+  "downright" 90deg 3px 3px -3px -3px,
+  "down" 135deg -4px 0 4px 0,
+  "downleft" 180deg -3px 3px 3px -3px,
   "left" 225deg,
-  "upleft" 270deg,
-  "up" 315deg,
-  "upright" 0deg
+  "upleft" 270deg 3px 3px -3px -3px,
+  "up" 315deg -4px 0 4px 0,
+  "upright" 0deg -3px 3px 3px -3px,
 );
 
-@each $direction, $deg in $arrow-direction {
+@each $direction, $deg, $before-margin-top, $before-margin-left, $after-margin-top, $after-margin-left in $arrow-direction {
   .i-arrows-#{$direction} {
     @extend .i-arrows;
 
     &::after,
     &::before {
       transform: rotate($deg);
+    }
+
+    &::before {
+      margin-left: $before-margin-left;
+      margin-top: $before-margin-top;
+    }
+
+    &::after {
+      margin-left: $after-margin-left;
+      margin-top: $after-margin-top;
     }
   }
 }
