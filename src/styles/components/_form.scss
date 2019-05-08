@@ -25,7 +25,8 @@ textarea {
     background-color: transparent;
   }
 
-  &:hover:not(:disabled):not(.filled) {
+  &:hover:not(:disabled):not(.filled),
+  &:focus:not(:disabled):not(.filled) {
     border-bottom: 1px solid $grey-color;
   }
 
