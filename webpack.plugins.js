@@ -121,7 +121,7 @@ const copyFiles = new CopyWebpackPlugin([
  */
 const favicon = new WebappWebpackPlugin({
   // Your source logo (required)
-  logo: './src/img/favicon.svg',
+  logo: './src/img/favicons/favicon.svg',
   // Enable caching and optionally specify the path to store cached data
   // Note: disabling caching may increase build times considerably
   cache: true,
