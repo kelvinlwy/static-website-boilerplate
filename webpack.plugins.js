@@ -127,6 +127,8 @@ const favicon = new WebappWebpackPlugin({
   cache: true,
   // Inject html links/metadata (requires html-webpack-plugin).
   inject: true,
+  // Prefix path for generated assets
+  prefix: 'img/favicons'
 });
 
 const prodPlugins = [
