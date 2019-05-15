@@ -45,6 +45,7 @@ yarn build OR npm run build
 * CSS - [Normalize.css](http://necolas.github.io/normalize.css/), [Neat](https://neat.bourbon.io) - A lightweight and flexible Sass grid, transpilation, SASS compliation, minification, and linting (StyleLint)
 * Local development server with hot reloading
 * Uses Webpack for processing and bundling your code
+* [FORMSPREE](https://formspree.io) Email Contact Form - No PHP, JS required to receive email enquiry.
 
 ## License
 
