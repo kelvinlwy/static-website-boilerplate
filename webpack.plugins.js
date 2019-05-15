@@ -8,6 +8,7 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 const StyleLintPlugin = require('stylelint-webpack-plugin');
 const SitemapPlugin = require('sitemap-webpack-plugin').default;
 const RobotstxtPlugin = require('robotstxt-webpack-plugin');
+const WebappWebpackPlugin = require('webapp-webpack-plugin');
 const devMode = process.env.NODE_ENV === "development";
 
 /**
@@ -78,7 +79,6 @@ const htmlPages = () => glob.sync('./src/**/[!_]*.html').map(
       filename: path.basename(dir), // Output
       inject: true,
       minify: process.env.NODE_ENV === "production",
-      favicon: 'src/favicon.ico',
       templateParameters: {
         page: path.basename(dir, '.html')
       }
@@ -116,6 +116,19 @@ const copyFiles = new CopyWebpackPlugin([
   {from: './src/img/', to: './img/'},
 ]);
 
+/**
+ * Use WebappWebpackPlugin to generate your favicon
+ */
+const favicon = new WebappWebpackPlugin({
+  // Your source logo (required)
+  logo: './src/img/favicon.svg',
+  // Enable caching and optionally specify the path to store cached data
+  // Note: disabling caching may increase build times considerably
+  cache: true,
+  // Inject html links/metadata (requires html-webpack-plugin).
+  inject: true,
+});
+
 const prodPlugins = [
   define,
   clean,
@@ -125,7 +138,8 @@ const prodPlugins = [
   miniCss,
   ga,
   copyFiles,
-  ...htmlPages()
+  ...htmlPages(),
+  favicon
 ].filter(Boolean);
 
 const devPlugins = [
@@ -134,7 +148,8 @@ const devPlugins = [
   hmr,
   stylelint,
   miniCss,
-  ...htmlPages()
+  ...htmlPages(),
+  favicon
 ].filter(Boolean);
 
 module.exports = {
