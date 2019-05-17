@@ -27,7 +27,7 @@ script:
   - yarn lint:js
 
 env:
-  - BASE_URL=https://vibrant-edison-a476b8.netlify.com
+  - BASE_URL=https://vibrant-edison-a476b8.netlify.com GOOGLE_ANALYTICS_UA=UA-93091606-2
 
 before_deploy:
   - yarn build
