@@ -12,4 +12,4 @@
 # Production context: all deploys from the Production branch set in your site's
 # deploy contexts will inherit these settings.
 [context.production]
-  environment = { BASE_URL = "https://vibrant-edison-a476b8.netlify.com", YARN_FLAGS = "--pure-lockfile --production=true", GOOGLE_ANALYTICS_UA = "UA-93091606-2" }
+  environment = { BASE_URL = "https://static-website-boilerplate.netlify.com", YARN_FLAGS = "--pure-lockfile --production=true", GOOGLE_ANALYTICS_UA = "UA-93091606-2" }

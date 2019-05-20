@@ -5,7 +5,7 @@ Static Website Boilerplate is a front-end template for building static website w
 [![Dependency Status](https://david-dm.org/kelvinlwy/static-website-boilerplate.svg)](https://david-dm.org/kelvinlwy/static-website-boilerplate)
 [![devDependency Status](https://david-dm.org/kelvinlwy/static-website-boilerplate/dev-status.svg)](https://david-dm.org/kelvinlwy/static-website-boilerplate#info=devDependencies)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](https://opensource.org/licenses/MIT)
-[![Netlify Status](https://api.netlify.com/api/v1/badges/efc70cfd-8965-4aa7-b7a5-d2ba98ff93c4/deploy-status)](https://app.netlify.com/sites/vibrant-edison-a476b8/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/efc70cfd-8965-4aa7-b7a5-d2ba98ff93c4/deploy-status)](https://app.netlify.com/sites/static-website-boilerplate/deploys)
 
 ## Quickstart
 
